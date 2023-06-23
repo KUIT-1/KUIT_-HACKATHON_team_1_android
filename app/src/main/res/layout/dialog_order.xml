@@ -5,12 +5,25 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_margin="10dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="카페 아메리카노"
         android:textColor="@color/black"
         android:textSize="20sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/add_shopCart_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="담기"/>
+
 
 
 

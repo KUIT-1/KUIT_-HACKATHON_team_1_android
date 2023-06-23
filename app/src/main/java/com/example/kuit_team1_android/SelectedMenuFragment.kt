@@ -51,8 +51,7 @@ class SelectedMenuFragment : Fragment() {
 
         starbucksMenuAdapter!!.setOnItemClickListener(object: starbucksMenuAdapter.OnItemClickListener{
             override fun onItemClick(menuInfo: HomeItem) {
-                parentFragment!!.parentFragmentManager.beginTransaction()
-                    .replace(R.id.main_frm, SelectedMenuFragment()).commit()
+                OrderDialog().show(parentFragmentManager, "dialog")
             }
 
         })
