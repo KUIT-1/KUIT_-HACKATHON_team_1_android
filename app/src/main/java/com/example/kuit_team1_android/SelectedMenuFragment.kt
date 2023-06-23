@@ -52,14 +52,9 @@ class SelectedMenuFragment : Fragment() {
 
         starbucksMenuAdapter!!.setOnItemClickListener(object: starbucksMenuAdapter.OnItemClickListener{
             override fun onItemClick(menuInfo: HomeItem) {
-                var bundle = Bundle()
-//                bundle.putSerializable("selectedMenu",menuInfo)
-                var orderdialog = OrderDialog()
                 val dataJson =Gson().toJson(menuInfo)
-                bundle.putString("selectedMenu",dataJson)
-
-
                 val intent = Intent(requireContext(), ItemDetailActivity::class.java)
+                intent.putExtra("selectedMenu",dataJson)
                 startActivity(intent)
 
             }
@@ -68,15 +63,15 @@ class SelectedMenuFragment : Fragment() {
 
     }
     private fun initDummyData() {
-        val dummydata = HomeItem(R.drawable.americano, "아메리카노", "달달", 1)
+        val dummydata = HomeItem(R.drawable.americano, "아메리카노", "달달", 1,"4000")
 //        drinkList.add(dummydata)
 
         allList.add(dummydata)
-        val dummydata2 = HomeItem(R.drawable.americano, "아메리카노2", "달달", 2)
+        val dummydata2 = HomeItem(R.drawable.americano, "아메리카노2", "달달", 2,"4000")
 //        foodList.add(dummydata2)
 
         allList.add(dummydata2)
-        val dummydata3 = HomeItem(R.drawable.americano, "아메리카노3", "달달", 3)
+        val dummydata3 = HomeItem(R.drawable.americano, "아메리카노3", "달달", 3,"4000")
 //        productList.add(dummydata3)
 
         allList.add(dummydata3)
