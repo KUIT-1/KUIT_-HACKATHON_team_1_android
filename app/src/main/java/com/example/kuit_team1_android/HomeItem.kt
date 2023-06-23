@@ -1,5 +1,6 @@
 package com.example.kuit_team1_android
 
+
 data class HomeItem (
     val menuSrc:Int,
     val menuName: String,
