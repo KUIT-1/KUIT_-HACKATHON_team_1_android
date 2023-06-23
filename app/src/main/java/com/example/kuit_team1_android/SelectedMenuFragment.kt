@@ -57,8 +57,11 @@ class SelectedMenuFragment : Fragment() {
                 var orderdialog = OrderDialog()
                 val dataJson =Gson().toJson(menuInfo)
                 bundle.putString("selectedMenu",dataJson)
-                orderdialog.arguments = bundle
-                orderdialog.show(parentFragmentManager, "dialog")
+
+
+                val intent = Intent(requireContext(), ItemDetailActivity::class.java)
+                startActivity(intent)
+
             }
         })
 

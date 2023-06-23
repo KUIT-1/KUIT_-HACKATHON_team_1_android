@@ -1,9 +1,11 @@
 package com.example.kuit_team1_android
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kuit_team1_android.databinding.ActivityItemDetailBinding
@@ -35,8 +37,12 @@ class ItemDetailActivity : AppCompatActivity() {
             }
             itemDetailOrderBtn.setOnClickListener {
                 // 주문 다이얼로그로 넘어가야함
-//                val intent = Intent(requireContext(), ItemDetailActivity::class.java)
-//                startActivity(intent)
+                val dialog = Dialog(this@ItemDetailActivity)
+                dialog.setContentView(R.layout.dialog_order) // 다이얼로그 레이아웃 설정
+                dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+
+                dialog.show()
+
             }
         }
     }
