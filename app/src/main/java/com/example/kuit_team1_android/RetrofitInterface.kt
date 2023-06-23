@@ -13,8 +13,8 @@ interface RetrofitInterface {
         @Body homeItem: HomeItem
     ): Call<HomeItem>
 
-    @GET("/members/{id}") //변경필요
-    fun getMember(
+    @GET("/menu/recommend") //변경필요
+    fun getMenu(
         @Path("id") id : Int
     ): Call<HomeItem>
 }

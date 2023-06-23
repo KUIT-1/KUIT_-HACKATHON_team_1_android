@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kuit_team1_android.databinding.FragmentOrderBinding
 import com.example.kuit_team1_android.databinding.FragmentShopBasketDetailBinding
+import com.google.gson.Gson
 
 class ShopBasketDetailFragment : Fragment() {
     lateinit var binding : FragmentShopBasketDetailBinding
@@ -25,6 +26,7 @@ class ShopBasketDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //Log.d("test1234", Gson().fromJson(requireArguments().getString("selectedMenu"), HomeItem::class.java).toString())
         orderList.add(HomeItem(R.drawable.americano,"아메리카노","꿀맛",1,"4400"))
         detailAdapter = OrderMenuAdapter(orderList)
         binding.orderMenuListRv.adapter = detailAdapter

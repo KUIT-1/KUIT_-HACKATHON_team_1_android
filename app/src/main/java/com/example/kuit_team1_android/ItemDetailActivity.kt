@@ -55,6 +55,8 @@ class ItemDetailActivity : AppCompatActivity() {
 
                 // OrderDialog 호출
                 val dialog = OrderDialog()
+                val temp = ShopBasketDetailFragment()
+                temp.arguments = bundle
                 dialog.arguments = bundle
                 dialog.show(supportFragmentManager, "OrderDialog")
 

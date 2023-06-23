@@ -23,6 +23,8 @@ class HomeFragment : Fragment() {
         initDummyData()
         init()
         initClick()
+        val service = getRetrofit().create(RetrofitInterface::class.java)
+        service.getMenu()
         return binding.root
     }
 
