@@ -1,10 +1,14 @@
 package com.example.kuit_team1_android
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.kuit_team1_android.databinding.FragmentOrderBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,9 +22,13 @@ private const val ARG_PARAM2 = "param2"
  */
 class OrderFragment : Fragment() {
     // TODO: Rename and change types of parameters
+    lateinit var binding: FragmentOrderBinding
     private var param1: String? = null
     private var param2: String? = null
+    var menuList : ArrayList<HomeItem> = arrayListOf()
+    var pagerHandler = Handler(Looper.getMainLooper())
 
+    private val categoyList = listOf<String>("전체 메뉴","나만의 메뉴")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,10 +41,26 @@ class OrderFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order, container, false)
+        binding = FragmentOrderBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+//        binding.webtoonBannerVp.adapter = bannerAdapter
+//        binding.webtoonBannerVp.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
+        menuList.add(HomeItem(R.drawable.img,"아메리카노","달달구리",1))
+        val starbucksMenuAdapter = starbucksMenuVPAdapter(this)
+        binding.starbucksMenuListVp.adapter = starbucksMenuAdapter
+        TabLayoutMediator(binding.starbucksCategoryTb,binding.starbucksMenuListVp){
+                tab,pos ->
+            tab.text = categoyList[pos]
+        }.attach()
+
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
