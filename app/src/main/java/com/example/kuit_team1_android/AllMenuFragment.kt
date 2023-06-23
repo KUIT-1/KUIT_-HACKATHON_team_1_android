@@ -78,8 +78,8 @@ class AllMenuFragment : Fragment() {
 
         starbucksMenuAdapter!!.setOnItemClickListener(object: starbucksMenuAdapter.OnItemClickListener{
             override fun onItemClick(menuInfo: HomeItem) {
-                val intent = Intent(requireContext(), ItemDetailActivity::class.java)
-                startActivity(intent)
+                parentFragment!!.parentFragmentManager.beginTransaction()
+                    .replace(R.id.main_frm, SelectedMenuFragment()).commit()
             }
 
         })
@@ -89,15 +89,15 @@ class AllMenuFragment : Fragment() {
 
 
     private fun initDummyData() {
-        val dummydata = HomeItem(R.drawable.img, "아메리카노", "달달", 1)
+        val dummydata = HomeItem(R.drawable.americano, "아메리카노", "달달", 1)
 //        drinkList.add(dummydata)
 
         allList.add(dummydata)
-        val dummydata2 = HomeItem(R.drawable.img, "아메리카노2", "달달", 2)
+        val dummydata2 = HomeItem(R.drawable.americano, "아메리카노2", "달달", 2)
 //        foodList.add(dummydata2)
 
         allList.add(dummydata2)
-        val dummydata3 = HomeItem(R.drawable.img, "아메리카노3", "달달", 3)
+        val dummydata3 = HomeItem(R.drawable.americano, "아메리카노3", "달달", 3)
 //        productList.add(dummydata3)
 
         allList.add(dummydata3)
