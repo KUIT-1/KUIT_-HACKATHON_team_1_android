@@ -7,8 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kuit_team1_android.databinding.FragmentOrderBinding
+import com.example.kuit_team1_android.databinding.FragmentShopBasketDetailBinding
 
 class ShopBasketDetailFragment : Fragment() {
+    lateinit var binding : FragmentShopBasketDetailBinding
     var detailAdapter: OrderMenuAdapter? = null
     private var orderList = ArrayList<HomeItem>()
     override fun onCreateView(
@@ -16,16 +19,17 @@ class ShopBasketDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop_basket_detail, container, false)
+        binding = FragmentShopBasketDetailBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("test1234", this.requireArguments().toString())
+        orderList.add(HomeItem(R.drawable.americano,"아메리카노","꿀맛",1,"4400"))
         detailAdapter = OrderMenuAdapter(orderList)
-//        binding.detailWebtoonListRv.adapter = detailAdapter
-//        binding.detailWebtoonListRv.layoutManager =
-//            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.orderMenuListRv.adapter = detailAdapter
+        binding.orderMenuListRv.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
 
 
