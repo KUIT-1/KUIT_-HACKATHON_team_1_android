@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.kuit_team1_android.databinding.FragmentMenuBinding
 import com.example.kuit_team1_android.databinding.FragmentSelectedMenuBinding
+import com.google.gson.Gson
 
 class SelectedMenuFragment : Fragment() {
     lateinit var binding: FragmentSelectedMenuBinding
@@ -51,9 +52,14 @@ class SelectedMenuFragment : Fragment() {
 
         starbucksMenuAdapter!!.setOnItemClickListener(object: starbucksMenuAdapter.OnItemClickListener{
             override fun onItemClick(menuInfo: HomeItem) {
-                OrderDialog().show(parentFragmentManager, "dialog")
+                var bundle = Bundle()
+//                bundle.putSerializable("selectedMenu",menuInfo)
+                var orderdialog = OrderDialog()
+                val dataJson =Gson().toJson(menuInfo)
+                bundle.putString("selectedMenu",dataJson)
+                orderdialog.arguments = bundle
+                orderdialog.show(parentFragmentManager, "dialog")
             }
-
         })
 
 

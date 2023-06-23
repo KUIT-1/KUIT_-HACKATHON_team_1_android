@@ -8,6 +8,7 @@ import android.util.Log
 import androidx.viewpager2.widget.ViewPager2
 import com.example.kuit_team1_android.databinding.ActivityShopBasketBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.gson.Gson
 import kotlin.math.ceil
 
 class ShopBasketActivity : AppCompatActivity() {
@@ -20,7 +21,8 @@ class ShopBasketActivity : AppCompatActivity() {
         binding = ActivityShopBasketBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        val dataJson = intent.getStringExtra("selectedMenu")
+        val orderData = Gson().fromJson(dataJson, HomeItem::class.java)
         binding.backBtn.setOnClickListener {
             finish()
         }
