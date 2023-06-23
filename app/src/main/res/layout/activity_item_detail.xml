@@ -205,7 +205,7 @@
         android:id="@+id/item_detail_order_btn"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:src="@drawable/orderBtn"
+        android:src="@drawable/order_btn"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
