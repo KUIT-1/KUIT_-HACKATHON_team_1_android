@@ -81,7 +81,6 @@ class AllMenuFragment : Fragment() {
                 parentFragment!!.parentFragmentManager.beginTransaction()
                     .replace(R.id.main_frm, SelectedMenuFragment()).commit()
             }
-
         })
 
 
