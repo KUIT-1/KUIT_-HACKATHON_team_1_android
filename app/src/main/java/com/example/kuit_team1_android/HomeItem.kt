@@ -21,6 +21,16 @@ data class HomeResult(
     @SerializedName("recommendMenuDtos") val recommendMenuDtos: List<RecommendMenuDto>
 )
 
+data class categoryResult(
+    @SerializedName("subCategoryList") val categoryDto: List<categoryDto>
+)
+data class categoryDto(
+    @SerializedName("id") val id : Int,
+    @SerializedName("name_kr") val name_kr : String,
+    @SerializedName("name_eng") val name_eng : String,
+    @SerializedName("image_url") val image_url : String,
+)
+
 data class RecommendMenuDto(
     @SerializedName("name") val name: String,
     @SerializedName("imageUrl") val imageUrl: String

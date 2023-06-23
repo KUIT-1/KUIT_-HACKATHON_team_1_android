@@ -4,17 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.kuit_team1_android.databinding.FragmentOrderBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import retrofit2.Call
+import retrofit2.Response
 
 class OrderFragment : Fragment() {
     lateinit var binding: FragmentOrderBinding
     var menuList : ArrayList<HomeItem> = arrayListOf()
     var pagerHandler = Handler(Looper.getMainLooper())
+
 
     private val categoyList = listOf<String>("전체 메뉴","나만의 메뉴")
 
@@ -57,5 +61,6 @@ class OrderFragment : Fragment() {
 
 
     }
+
 
 }
