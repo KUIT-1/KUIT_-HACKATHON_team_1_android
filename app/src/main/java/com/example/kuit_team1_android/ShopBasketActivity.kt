@@ -21,6 +21,10 @@ class ShopBasketActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        binding.backBtn.setOnClickListener {
+            finish()
+        }
+
         val shopBasketVPAdapter = ShopBasketVPAdapter(this)
         binding.shopbasketVp.adapter = shopBasketVPAdapter
         TabLayoutMediator(binding.shopbasketTb, binding.shopbasketVp) { tab, position ->

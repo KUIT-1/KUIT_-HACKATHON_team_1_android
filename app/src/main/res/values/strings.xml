@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <style name="tabTextStyle" parent="TextAppearance.Design.Tab">
+    <style name="tabTextStyle2" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
