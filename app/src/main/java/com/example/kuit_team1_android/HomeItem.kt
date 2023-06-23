@@ -6,7 +6,8 @@ data class HomeItem(
     @SerializedName("menuSrc") val menuSrc:Int,
     @SerializedName("menuName") val menuName: String,
     @SerializedName("menuExp") val menuExp:String,
-    @SerializedName("menuType") val menuType:Int
+    @SerializedName("menuType") val menuType:Int,
+    @SerializedName("menuType") val menuPrice:String
 )
 data class HomeItemResponse(
     @SerializedName("code") val code: Int,

@@ -88,15 +88,15 @@ class AllMenuFragment : Fragment() {
 
 
     private fun initDummyData() {
-        val dummydata = HomeItem(R.drawable.americano, "아메리카노", "달달", 1)
+        val dummydata = HomeItem(R.drawable.americano, "아메리카노", "달달", 1,"4000")
 //        drinkList.add(dummydata)
 
         allList.add(dummydata)
-        val dummydata2 = HomeItem(R.drawable.americano, "아메리카노2", "달달", 2)
+        val dummydata2 = HomeItem(R.drawable.americano, "아메리카노2", "달달", 2,"4100")
 //        foodList.add(dummydata2)
 
         allList.add(dummydata2)
-        val dummydata3 = HomeItem(R.drawable.americano, "아메리카노3", "달달", 3)
+        val dummydata3 = HomeItem(R.drawable.americano, "아메리카노3", "달달",2,"4200")
 //        productList.add(dummydata3)
 
         allList.add(dummydata3)
