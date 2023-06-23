@@ -1,5 +1,6 @@
 package com.example.kuit_team1_android
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,7 +22,20 @@ class HomeFragment : Fragment() {
 
         initDummyData()
         init()
+        initClick()
         return binding.root
+    }
+
+    private fun initClick() {
+
+        //이거 지워야함
+        binding.apply {
+            homeLoginBtn.setOnClickListener {
+                val intent = Intent(requireContext(), ShopBasketActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        //
     }
 
     fun init() {
@@ -33,6 +47,8 @@ class HomeFragment : Fragment() {
 
     fun initDummyData(){
         val dummydata = HomeItem(R.drawable.home_img2, "아메리카노", "", 0)
+        itemList.add(dummydata)
+        itemList.add(dummydata)
         itemList.add(dummydata)
     }
 
