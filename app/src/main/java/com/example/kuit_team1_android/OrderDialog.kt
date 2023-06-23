@@ -14,6 +14,7 @@ import com.google.gson.Gson
 
 class OrderDialog : DialogFragment() {
     lateinit var binding: DialogOrderBinding
+  lateinit var selectedMenu : HomeItem
 
     //    lateinit var selectedMenu : HomeItem
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -23,13 +24,21 @@ class OrderDialog : DialogFragment() {
         val builder = AlertDialog.Builder(requireActivity(), R.style.FullscreenDialog)
             .setView(binding.root)
 
+
+        selectedMenu = Gson().fromJson(requireArguments().getString("selectedMenu"),HomeItem::class.java)
+        Log.d("testtest",selectedMenu.toString())
+        //여기서 개수 지정 후 다음 액티비티로 넘기기
+
+
+      
+
         binding.apply {
             addShopCartBtn.setOnClickListener {
                 Log.d("ClickEvent", "addShopCartBtn")
 
                 val intent = Intent(requireContext(), ShopBasketActivity::class.java)
-//            val data = Gson().toJson(selectedMenu)
-//            intent.putExtra("selectedMenu",data)
+                val data = Gson().toJson(selectedMenu)
+                intent.putExtra("selectedMenu",data)
                 intent.putExtra("number", 2)
                 startActivity(intent)
                 dismiss()
@@ -50,6 +59,7 @@ class OrderDialog : DialogFragment() {
                     itemPriceTv.text = newPrice.toString()
                 }
             }
+
         }
 
 
