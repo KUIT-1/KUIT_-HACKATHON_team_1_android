@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
         //이거 지워야함
         binding.apply {
             homeLoginBtn.setOnClickListener {
-                val intent = Intent(requireContext(), ShopBasketActivity::class.java)
+                val intent = Intent(requireContext(), ItemDetailActivity::class.java)
                 startActivity(intent)
             }
         }
