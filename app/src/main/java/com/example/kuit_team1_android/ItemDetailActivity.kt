@@ -37,11 +37,15 @@ class ItemDetailActivity : AppCompatActivity() {
             }
             itemDetailOrderBtn.setOnClickListener {
                 // 주문 다이얼로그로 넘어가야함
-                val dialog = Dialog(this@ItemDetailActivity)
-                dialog.setContentView(R.layout.dialog_order) // 다이얼로그 레이아웃 설정
-                dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+//                val dialog = Dialog(this@ItemDetailActivity)
+//                dialog.setContentView(R.layout.dialog_order) // 다이얼로그 레이아웃 설정
+//                dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+//
+//                dialog.show()
 
-                dialog.show()
+                // OrderDialog 호출
+                val dialog = OrderDialog()
+                dialog.show(supportFragmentManager, "OrderDialog")
 
             }
         }

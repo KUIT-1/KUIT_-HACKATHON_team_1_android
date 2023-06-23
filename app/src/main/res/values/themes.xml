@@ -20,6 +20,7 @@
         <item  name="android:textColor">@color/black</item>
     </style>
 
+<!--    Dialog 크기 조정-->
     <style name="FullscreenDialog" parent="Theme.AppCompat.Dialog">
         <item name="android:windowFullscreen">true</item>
     </style>
