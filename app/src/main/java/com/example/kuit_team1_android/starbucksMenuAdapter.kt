@@ -23,6 +23,9 @@ class starbucksMenuAdapter(private val itemList: ArrayList<HomeItem>) :
             binding.itemStarbucksMenuNameTv.text = menuInfo.menuName
             binding.itemStarbucksMenuDescription.text = menuInfo.menuExp
             binding.itemStarbucksMenuIv3.setImageResource(menuInfo.menuSrc)
+            binding.itemStarbucksMenuCl.setOnClickListener {
+                itemClickListener.onItemClick(menuInfo)
+            }
         }
     }
 
