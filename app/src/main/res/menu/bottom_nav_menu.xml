@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:enabled="true"
+        android:checked="true"
+        android:title="Home" />
+    <item
+        android:id="@+id/payFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:enabled="true"
+        android:title="Pay" />
+    <item
+        android:id="@+id/orderFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:enabled="true"
+        android:title="Order" />
+    <item
+        android:id="@+id/shopFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:enabled="true"
+        android:title="Shop" />
+
+    <item
+        android:id="@+id/otherFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:enabled="true"
+        android:title="Other" />
+
+</menu>
