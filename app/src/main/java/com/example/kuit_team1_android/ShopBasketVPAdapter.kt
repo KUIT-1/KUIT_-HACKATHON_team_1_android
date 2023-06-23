@@ -10,8 +10,8 @@ class ShopBasketVPAdapter(activity: ShopBasketActivity): FragmentStateAdapter(ac
 
 
         return when(position){
-            1 -> ShopBasketDetailFragment()
-            2 -> ShopBasketItemFragment()
+            0 -> ShopBasketDetailFragment()
+            1 -> ShopBasketItemFragment()
             else -> ShopBasketDetailFragment()
         }
 
