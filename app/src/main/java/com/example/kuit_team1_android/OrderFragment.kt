@@ -1,5 +1,6 @@
 package com.example.kuit_team1_android
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -51,7 +52,10 @@ class OrderFragment : Fragment() {
 
 //        binding.webtoonBannerVp.adapter = bannerAdapter
 //        binding.webtoonBannerVp.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-
+        binding.iconSearchIv.setOnClickListener {
+            val intent = Intent(requireContext(),SearchMenuActivity::class.java)
+            startActivity(intent)
+        }
         menuList.add(HomeItem(R.drawable.img,"아메리카노","달달구리",1))
         val starbucksMenuAdapter = starbucksMenuVPAdapter(this)
         binding.starbucksMenuListVp.adapter = starbucksMenuAdapter
