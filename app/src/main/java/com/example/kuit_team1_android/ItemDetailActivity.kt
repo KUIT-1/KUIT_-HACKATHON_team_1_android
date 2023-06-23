@@ -42,12 +42,12 @@ class ItemDetailActivity : AppCompatActivity() {
                 val bundle = Bundle()
 
 
-                webToonDeatilFragment.arguments = webtoonbundle
+               // webToonDeatilFragment.arguments = webtoonbundle
 
-                val dataJson = intent.getStringExtra("selectedMenu")
-                val OrderData = Gson().fromJson(dataJson, HomeItem::class.java)
-                val dataJson = Gson().toJson(OrderData)
-                bundle.putString("selectedMenu", dataJson)
+//                val dataJson = intent.getStringExtra("selectedMenu")
+//                val OrderData = Gson().fromJson(dataJson, HomeItem::class.java)
+//                val dataJson = Gson().toJson(OrderData)
+                //bundle.putString("selectedMenu", dataJson)
 //                val dialog = Dialog(this@ItemDetailActivity)
 //                dialog.setContentView(R.layout.dialog_order) // 다이얼로그 레이아웃 설정
 //                dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
