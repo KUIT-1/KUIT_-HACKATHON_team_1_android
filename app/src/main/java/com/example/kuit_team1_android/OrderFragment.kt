@@ -40,6 +40,12 @@ class OrderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+
+        binding.iconSearchIv.setOnClickListener {
+            val intent = Intent(requireContext(),SearchMenuActivity::class.java)
+            startActivity(intent)
+        }
+        
         menuList.add(HomeItem(R.drawable.img,"아메리카노","달달구리",1))
         val starbucksMenuAdapter = starbucksMenuVPAdapter(this)
         binding.starbucksMenuListVp.adapter = starbucksMenuAdapter
