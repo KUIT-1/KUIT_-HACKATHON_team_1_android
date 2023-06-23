@@ -46,7 +46,7 @@ class OrderFragment : Fragment() {
             startActivity(intent)
         }
         
-        menuList.add(HomeItem(R.drawable.img,"아메리카노","달달구리",1,"4000"))
+//        menuList.add(HomeItem(R.drawable.img,"아메리카노","달달구리",1,"4000"))
         val starbucksMenuAdapter = starbucksMenuVPAdapter(this)
         binding.starbucksMenuListVp.adapter = starbucksMenuAdapter
         TabLayoutMediator(binding.starbucksCategoryTb,binding.starbucksMenuListVp){

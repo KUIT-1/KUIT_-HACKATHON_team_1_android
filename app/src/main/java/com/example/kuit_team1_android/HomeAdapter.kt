@@ -3,6 +3,7 @@ package com.example.kuit_team1_android
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.kuit_team1_android.databinding.ItemHomeRecBinding
 
 class HomeAdapter(private var itemList: ArrayList<HomeItem>) :
@@ -22,7 +23,7 @@ class HomeAdapter(private var itemList: ArrayList<HomeItem>) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(itemList: HomeItem) {
             binding.itemNameTv.text = itemList.menuName
-            binding.itemImgIv.setImageResource(itemList.menuSrc)
+            Glide.with(binding.root).load(itemList.menuSrc).into(binding.itemImgIv)
 
         }
 

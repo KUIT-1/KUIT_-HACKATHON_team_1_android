@@ -1,12 +1,8 @@
 package com.example.kuit_team1_android
 
-import android.app.Dialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kuit_team1_android.databinding.ActivityItemDetailBinding
 import com.google.gson.Gson
@@ -22,7 +18,7 @@ class ItemDetailActivity : AppCompatActivity() {
         binding = ActivityItemDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initDummyData()
+//        initDummyData()
         init()
     }
 
@@ -75,11 +71,11 @@ class ItemDetailActivity : AppCompatActivity() {
         }
     }
 
-    fun initDummyData(){
-        val dummydata = HomeItem(R.drawable.home_img4, "아메리카노", "", 0,"4000")
-        itemList.add(dummydata)
-        itemList.add(dummydata)
-        itemList.add(dummydata)
-    }
+//    fun initDummyData(){
+//        val dummydata = HomeItem(R.drawable.home_img4, "아메리카노", "", 0,"4000")
+//        itemList.add(dummydata)
+//        itemList.add(dummydata)
+//        itemList.add(dummydata)
+//    }
 
 }

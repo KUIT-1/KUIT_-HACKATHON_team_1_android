@@ -3,6 +3,7 @@ package com.example.kuit_team1_android
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.kuit_team1_android.databinding.ItemStarbucksMenuBinding
 
 class starbucksMenuAdapter(private val itemList: ArrayList<HomeItem>) :
@@ -22,7 +23,7 @@ class starbucksMenuAdapter(private val itemList: ArrayList<HomeItem>) :
         fun bind(menuInfo: HomeItem) {
             binding.itemStarbucksMenuNameTv.text = menuInfo.menuName
             binding.itemStarbucksMenuDescription.text = menuInfo.menuExp
-            binding.itemStarbucksMenuIv3.setImageResource(menuInfo.menuSrc)
+            Glide.with(binding.root).load(menuInfo.menuSrc).into(binding.itemStarbucksMenuIv3)
             binding.itemStarbucksMenuCl.setOnClickListener {
                 itemClickListener.onItemClick(menuInfo)
             }
