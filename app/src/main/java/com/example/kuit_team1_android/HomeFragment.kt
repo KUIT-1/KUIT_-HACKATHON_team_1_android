@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
 
 
     fun initDummyData(){
-        val dummydata = HomeItem(R.drawable.home_img2, "아메리카노", "", 0)
+        val dummydata = HomeItem(R.drawable.home_img4, "햄&루꼴라 올리브 샌드위치", "", 0)
         itemList.add(dummydata)
         itemList.add(dummydata)
         itemList.add(dummydata)

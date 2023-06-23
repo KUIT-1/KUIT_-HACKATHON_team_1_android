@@ -12,6 +12,7 @@
     <color name="MainColor">#00A556</color>
     <color name="transparent">#00FF0000</color>
     <color name="gray">#ededed</color>
+    <color name="darkgray">#808080</color>
 
 
 </resources>
