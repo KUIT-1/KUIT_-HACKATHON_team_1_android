@@ -38,7 +38,6 @@ class ItemDetailActivity : AppCompatActivity() {
             itemDetailOrderBtn.setOnClickListener {
                 // 주문 다이얼로그로 넘어가야함
 
-
                 val bundle = Bundle()
                 val itemName = itemNameKorTv.text.toString()
                 val itemExp = itemNameEngTv.text.toString()
