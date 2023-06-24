@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ItemDetailActivity">
 
+<!--    <ImageView-->
+<!--        android:id="@+id/back_btn"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:src="@drawable/round_arrow_back_ios_24" />-->
+
+
+
     <ScrollView
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
@@ -19,54 +28,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/item_detail_img_iv"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:scaleType="fitXY"
+                android:layout_height="320dp"
                 android:src="@drawable/item_ex_img" />
 
-            <androidx.cardview.widget.CardView
+
+            <ImageView
                 android:id="@+id/back_btn"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_margin="10dp"
-                app:cardBackgroundColor="@color/transparent"
-                app:cardCornerRadius="100dp"
+                android:src="@drawable/back_white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/round_arrow_back_ios_24" />
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/item_detail_share_btn"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="@color/transparent"
-                app:cardCornerRadius="100dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/baseline_ios_share_24" />
-
-            </androidx.cardview.widget.CardView>
-
-            <!--    <ImageView-->
-            <!--        android:id="@+id/back_btn"-->
-            <!--        android:layout_width="40dp"-->
-            <!--        android:layout_height="40dp"-->
-            <!--        android:layout_margin="10dp"-->
-            <!--        android:src="@drawable/back_trans_btn"-->
-            <!--        app:layout_constraintStart_toStartOf="parent"-->
-            <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
             <!--    <ImageView-->
             <!--        android:id="@+id/item_detail_share_btn"-->
