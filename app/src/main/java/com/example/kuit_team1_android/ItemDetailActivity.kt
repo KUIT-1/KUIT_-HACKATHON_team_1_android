@@ -28,6 +28,9 @@ class ItemDetailActivity : AppCompatActivity() {
         binding.homeHorizontalRv.adapter = HomeAdapter(itemList)
 
         binding.apply {
+            backBtn.setOnClickListener {
+                finish()
+            }
             tempBtn.setOnClickListener {
                 isIced = !isIced
                 updatetemp(isIced)
@@ -35,13 +38,26 @@ class ItemDetailActivity : AppCompatActivity() {
             itemDetailOrderBtn.setOnClickListener {
                 // 주문 다이얼로그로 넘어가야함
 
-                val bundle = Bundle()
-               // webToonDeatilFragment.arguments = webtoonbundle
 
-                val dataJson = intent.getStringExtra("selectedMenu")
-                val OrderData = Gson().fromJson(dataJson, HomeItem::class.java)
-                val dataJson2 = Gson().toJson(OrderData)
-                bundle.putString("selectedMenu", dataJson2)
+                val bundle = Bundle()
+                val itemName = itemNameKorTv.text.toString()
+                val itemPrice = itemPriceTv.text.toString()
+                val itemImg = itemDetailImgIv.toString()
+
+                val selectedMenu = HomeItem(itemImg, itemName, "", 0, itemPrice)
+                val dataJson = Gson().toJson(selectedMenu)
+                bundle.putString("selectedMenu", dataJson)
+
+                // OrderDialog 호출
+                val dialog = OrderDialog()
+                dialog.arguments = bundle
+                dialog.show(supportFragmentManager, "OrderDialog")
+
+
+//                val dataJson = intent.getStringExtra("selectedMenu")
+//                val OrderData = Gson().fromJson(dataJson, HomeItem::class.java)
+//                val dataJson2 = Gson().toJson(OrderData)
+//                bundle.putString("selectedMenu", dataJson2)
 //                val dialog = Dialog(this@ItemDetailActivity)
 //                dialog.setContentView(R.layout.dialog_order) // 다이얼로그 레이아웃 설정
 //                dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -50,9 +66,9 @@ class ItemDetailActivity : AppCompatActivity() {
 
 
                 // OrderDialog 호출
-                val dialog = OrderDialog()
-                dialog.arguments = bundle
-                dialog.show(supportFragmentManager, "OrderDialog")
+//                val dialog = OrderDialog()
+//                dialog.arguments = bundle
+//                dialog.show(supportFragmentManager, "OrderDialog")
 
             }
         }
@@ -63,10 +79,12 @@ class ItemDetailActivity : AppCompatActivity() {
         if (!state) {
             binding.iceIv.visibility = View.GONE
             binding.hotIv.visibility = View.VISIBLE
+            binding.itemNameTempTv.visibility = View.GONE
             binding.itemDetailImgIv.setImageResource(R.drawable.hot_americano)
         } else {
             binding.iceIv.visibility = View.VISIBLE
             binding.hotIv.visibility = View.GONE
+            binding.itemNameTempTv.visibility = View.GONE
             binding.itemDetailImgIv.setImageResource(R.drawable.item_ex_img)
         }
     }

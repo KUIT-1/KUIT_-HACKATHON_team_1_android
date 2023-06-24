@@ -57,10 +57,9 @@ class OrderFragment : Fragment() {
                 tab,pos ->
             tab.text = categoyList[pos]
         }.attach()
-
-
-
     }
+
+
 
 
 }

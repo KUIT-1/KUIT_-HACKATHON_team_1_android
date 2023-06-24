@@ -20,12 +20,31 @@ class ShopBasketActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityShopBasketBinding.inflate(layoutInflater)
         setContentView(binding.root)
+//
+//        val dataJson = intent.getStringExtra("selectedMenu")
+//        val orderData = Gson().fromJson(dataJson, HomeItem::class.java)
 
-        val dataJson = intent.getStringExtra("selectedMenu")
-        val orderData = Gson().fromJson(dataJson, HomeItem::class.java)
-        binding.backBtn.setOnClickListener {
-            finish()
+
+        binding.apply {
+            backBtn.setOnClickListener {
+                finish()
+            }
+
+            val bundle = intent.extras
+            if (bundle != null) {
+                // 번들에서 데이터 추출
+                val dataJson = bundle.getString("Menu")
+                val orderMenu = Gson().fromJson(dataJson, HomeItem::class.java)
+                Log.d("ShopBasketActivity_Bundle", orderMenu.toString())
+
+                // 추출한 데이터 활용
+                val menuName = orderMenu.menuName
+                val menuPrice = orderMenu.menuPrice
+
+
+            }
         }
+
 
         val shopBasketVPAdapter = ShopBasketVPAdapter(this)
         binding.shopbasketVp.adapter = shopBasketVPAdapter

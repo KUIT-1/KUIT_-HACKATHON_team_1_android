@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<HomeResult>, t: Throwable) {
-                Log.i("GETUSERID/FAILURE", t.message.toString())
+                Log.i("GETUSERID/FAILURE", "fail!!")
             }
 
         })

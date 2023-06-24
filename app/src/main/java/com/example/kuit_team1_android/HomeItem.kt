@@ -35,3 +35,13 @@ data class RecommendMenuDto(
     @SerializedName("name") val name: String,
     @SerializedName("imageUrl") val imageUrl: String
 )
+
+data class SelectedResult(
+    @SerializedName("subCategoryList") val subCategoryList: List<SubCategoryList>
+)
+
+data class SubCategoryList(
+    @SerializedName("id") val id: Int,
+    @SerializedName("name_kr") val name_kr: String,
+    @SerializedName("name_eng") val name_eng: String
+)
