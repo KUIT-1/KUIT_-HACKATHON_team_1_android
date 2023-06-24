@@ -67,15 +67,15 @@ class SelectedMenuFragment : Fragment() {
 
 
     private fun initDummyData() {
-        val dummydata = HomeItem("https://image.gsncoupon.com:34443//202301/10/20230110CP1673327352198951.jpg", "아메리카노", "달달", 1,"4000")
+        val dummydata = HomeItem("https://image.gsncoupon.com:34443//202301/10/20230110CP1673327352198951.jpg", "아메리카노", "달달", 1,"4000",0)
 //        drinkList.add(dummydata)
 
         allList.add(dummydata)
-        val dummydata2 = HomeItem("https://image.gsncoupon.com:34443//202301/10/20230110CP1673327352198951.jpg", "아메리카노2", "달달", 2,"4000")
+        val dummydata2 = HomeItem("https://image.gsncoupon.com:34443//202301/10/20230110CP1673327352198951.jpg", "아메리카노2", "달달", 2,"4000",0)
 //        foodList.add(dummydata2)
 
         allList.add(dummydata2)
-        val dummydata3 = HomeItem("https://image.gsncoupon.com:34443//202301/10/20230110CP1673327352198951.jpg", "아메리카노3", "달달", 3,"4000")
+        val dummydata3 = HomeItem("https://image.gsncoupon.com:34443//202301/10/20230110CP1673327352198951.jpg", "아메리카노3", "달달", 3,"4000",0)
 //        productList.add(dummydata3)
 
         allList.add(dummydata3)
