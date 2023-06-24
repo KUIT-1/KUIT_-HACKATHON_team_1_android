@@ -8,7 +8,7 @@ import com.example.kuit_team1_android.databinding.ItemStarbucksMenuBinding
 
 class starbucksMenuAdapter(private val itemList: ArrayList<HomeItem>) :
     RecyclerView.Adapter<starbucksMenuAdapter.ViewHolder>() {
-    private lateinit var itemClickListener: OnItemClickListener
+    var itemClickListener: OnItemClickListener?= null
 
     interface OnItemClickListener {
         fun onItemClick(menuInfo: HomeItem)
@@ -25,7 +25,7 @@ class starbucksMenuAdapter(private val itemList: ArrayList<HomeItem>) :
             binding.itemStarbucksMenuDescription.text = menuInfo.menuExp
             Glide.with(binding.root).load(menuInfo.menuSrc).into(binding.itemStarbucksMenuIv3)
             binding.itemStarbucksMenuCl.setOnClickListener {
-                itemClickListener.onItemClick(menuInfo)
+                itemClickListener?.onItemClick(menuInfo)
             }
         }
     }
