@@ -41,10 +41,11 @@ class ItemDetailActivity : AppCompatActivity() {
 
                 val bundle = Bundle()
                 val itemName = itemNameKorTv.text.toString()
+                val itemExp = itemNameEngTv.text.toString()
                 val itemPrice = itemPriceTv.text.toString()
                 val itemImg = itemDetailImgIv.toString()
 
-                val selectedMenu = HomeItem(itemImg, itemName, "", 0, itemPrice, 1)
+                val selectedMenu = HomeItem(itemImg, itemName, itemExp, 0, itemPrice, 1)
                 val dataJson = Gson().toJson(selectedMenu)
                 bundle.putString("selectedMenu", dataJson)
 
