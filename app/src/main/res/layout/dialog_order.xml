@@ -81,22 +81,25 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/store_cup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
                     android:text="매장컵" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/personal_cup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
                     android:text="개인컵" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/disposable_cup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
                     android:text="일회용컵" />
 
             </LinearLayout>
@@ -274,20 +277,22 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/add_shopCart_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@color/white"
                 android:text="담기"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/order_btn" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/order_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@color/white"
                 android:text="주문하기"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />

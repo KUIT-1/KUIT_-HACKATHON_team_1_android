@@ -3,29 +3,29 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/round_home_24"
         android:enabled="true"
         android:checked="true"
         android:title="Home" />
     <item
         android:id="@+id/payFragment"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/round_payments_24"
         android:enabled="true"
         android:title="Pay" />
     <item
         android:id="@+id/orderFragment"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/round_local_drink_24"
         android:enabled="true"
         android:title="Order" />
     <item
         android:id="@+id/shopFragment"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/round_shopping_basket_24"
         android:enabled="true"
         android:title="Shop" />
 
     <item
         android:id="@+id/otherFragment"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/baseline_more_horiz_24"
         android:enabled="true"
         android:title="Other" />
 

@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemBackground="@color/white"
+        app:itemIconTint="@color/darkgray"
         app:labelVisibilityMode="labeled"
         app:itemIconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
