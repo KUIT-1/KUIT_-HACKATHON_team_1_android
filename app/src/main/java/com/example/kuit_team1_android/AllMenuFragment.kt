@@ -30,62 +30,48 @@ class AllMenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMenuBinding.inflate(inflater, container, false)
-
         setCategory(1)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-//        initDummyData()
-//        init()
+        init()
 
     }
 
     private fun init() {
-        starbucksMenuAdapter = starbucksMenuAdapter(drinkList)
+//        starbucksMenuAdapter = starbucksMenuAdapter(drinkList)
+//
+//        binding.categoryDrink.setOnClickListener {
+//            Log.d("ClickEvent", "drink")
+//            Log.d("ListSize", drinkList.size.toString())
+//
+//            starbucksMenuAdapter = starbucksMenuAdapter((drinkList))
+//            binding.starbucksMenuListRv.adapter = starbucksMenuAdapter
+//
+//            starbucksMenuAdapter((drinkList)).notifyDataSetChanged()
+//        }
+//        binding.categoryFood.setOnClickListener {
+//            Log.d("ClickEvent", "food")
+//            Log.d("FoodListSize", foodList.size.toString())
+//
+//
+//            starbucksMenuAdapter = starbucksMenuAdapter((foodList))
+//            binding.starbucksMenuListRv.adapter = starbucksMenuAdapter
+//
+//            starbucksMenuAdapter((foodList)).notifyDataSetChanged()
+//        }
+//        binding.categoryProduct.setOnClickListener {
+//            Log.d("ClickEvent", "product")
+//
+//            starbucksMenuAdapter = starbucksMenuAdapter((productList))
+//            binding.starbucksMenuListRv.adapter = starbucksMenuAdapter
+//
+//            starbucksMenuAdapter((productList)).notifyDataSetChanged()
+//        }
+        Log.d("itemlist",itemList.toString())
 
-        binding.categoryDrink.setOnClickListener {
-            Log.d("ClickEvent", "drink")
-            Log.d("ListSize", drinkList.size.toString())
-
-            starbucksMenuAdapter = starbucksMenuAdapter((drinkList))
-            binding.starbucksMenuListRv.adapter = starbucksMenuAdapter
-
-            starbucksMenuAdapter((drinkList)).notifyDataSetChanged()
-        }
-        binding.categoryFood.setOnClickListener {
-            Log.d("ClickEvent", "food")
-            Log.d("FoodListSize", foodList.size.toString())
-
-
-            starbucksMenuAdapter = starbucksMenuAdapter((foodList))
-            binding.starbucksMenuListRv.adapter = starbucksMenuAdapter
-
-            starbucksMenuAdapter((foodList)).notifyDataSetChanged()
-        }
-        binding.categoryProduct.setOnClickListener {
-            Log.d("ClickEvent", "product")
-
-            starbucksMenuAdapter = starbucksMenuAdapter((productList))
-            binding.starbucksMenuListRv.adapter = starbucksMenuAdapter
-
-            starbucksMenuAdapter((productList)).notifyDataSetChanged()
-        }
-
-        binding.starbucksMenuListRv.adapter = starbucksMenuAdapter
-        binding.starbucksMenuListRv.layoutManager = GridLayoutManager(context, 1)
-
-
-        starbucksMenuAdapter!!.setOnItemClickListener(object: starbucksMenuAdapter.OnItemClickListener{
-            override fun onItemClick(menuInfo: HomeItem) {
-                parentFragment!!.parentFragmentManager.beginTransaction()
-                    .replace(R.id.main_frm, SelectedMenuFragment()).commit()
-            }
-        })
 
 
     }
@@ -110,10 +96,18 @@ class AllMenuFragment : Fragment() {
                             val img = menuDto.image_url
                             itemList.add(HomeItem(img, kor, eng, 0, ""))
                         }
-                        // itemList이 변경되었으므로 어댑터에 변경을 알려줘야 함
-                        binding.starbucksMenuListRv.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+                        starbucksMenuAdapter = starbucksMenuAdapter(itemList)
+                        binding.starbucksMenuListRv.adapter = starbucksMenuAdapter
+                        binding.starbucksMenuListRv.layoutManager = GridLayoutManager(context, 1)
 
-                        binding.starbucksMenuListRv.adapter = starbucksMenuAdapter(itemList)
+
+                        starbucksMenuAdapter!!.setOnItemClickListener(object: starbucksMenuAdapter.OnItemClickListener{
+                            override fun onItemClick(menuInfo: HomeItem) {
+                                parentFragment!!.parentFragmentManager.beginTransaction()
+                                    .replace(R.id.main_frm, SelectedMenuFragment()).commit()
+                            }
+                        })
+                        // itemList이 변경되었으므로 어댑터에 변경을 알려줘야 함
                     }
                     //                    menuname = resp!!.result.name
                     //                    menuImg = resp!!.result.img
