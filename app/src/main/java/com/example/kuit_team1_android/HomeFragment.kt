@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
                         for (menuDto in menuDtos) {
                             val menuName = menuDto.name
                             val imageUrl = menuDto.imageUrl
-                            itemList.add(HomeItem(imageUrl, menuName, "", 0, ""))
+                            itemList.add(HomeItem(imageUrl, menuName, "", 0, "", 1))
                         }
                         // itemList이 변경되었으므로 어댑터에 변경을 알려줘야 함
                         binding.homeHorizontalRv.adapter?.notifyDataSetChanged()

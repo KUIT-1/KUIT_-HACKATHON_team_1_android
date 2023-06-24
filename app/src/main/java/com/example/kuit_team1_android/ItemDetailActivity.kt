@@ -44,7 +44,7 @@ class ItemDetailActivity : AppCompatActivity() {
                 val itemPrice = itemPriceTv.text.toString()
                 val itemImg = itemDetailImgIv.toString()
 
-                val selectedMenu = HomeItem(itemImg, itemName, "", 0, itemPrice)
+                val selectedMenu = HomeItem(itemImg, itemName, "", 0, itemPrice, 1)
                 val dataJson = Gson().toJson(selectedMenu)
                 bundle.putString("selectedMenu", dataJson)
 
@@ -75,19 +75,27 @@ class ItemDetailActivity : AppCompatActivity() {
     }
 
     fun updatetemp(state: Boolean) {
-//        userDB.UserDao().updateAlarmed(isAlarmed, getUserId(requireContext()), webtoonInfo.id)
         if (!state) {
             binding.iceIv.visibility = View.GONE
             binding.hotIv.visibility = View.VISIBLE
-            binding.itemNameTempTv.visibility = View.GONE
             binding.itemDetailImgIv.setImageResource(R.drawable.hot_americano)
+
+            val currentText = binding.itemNameKorTv.text.toString()
+            val updatedText = currentText.replace("아이스", "")
+            binding.itemNameKorTv.text = updatedText
         } else {
             binding.iceIv.visibility = View.VISIBLE
             binding.hotIv.visibility = View.GONE
-            binding.itemNameTempTv.visibility = View.GONE
             binding.itemDetailImgIv.setImageResource(R.drawable.item_ex_img)
+
+            // 아이스 텍스트 추가
+            val currentText = binding.itemNameKorTv.text.toString()
+            val updatedText = "아이스 $currentText"
+            binding.itemNameKorTv.text = updatedText
         }
+
     }
+
 
 //    fun initDummyData(){
 //        val dummydata = HomeItem(R.drawable.home_img4, "아메리카노", "", 0,"4000")

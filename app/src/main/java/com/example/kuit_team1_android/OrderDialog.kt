@@ -60,13 +60,18 @@ class OrderDialog : DialogFragment() {
 
                 val bundle = Bundle()
 
+                val price = itemPriceTv.text.toString()
+
+
                 val Menu = HomeItem(
                     selectedMenu.menuSrc,
                     selectedMenu.menuName,
                     selectedMenu.menuExp,
                     selectedMenu.menuType,
-                    itemPriceTv.text.toString()
+                    price,
+                    price.toInt()/itemPrice
                 )
+//                val MenuOption =
                 val dataJson = Gson().toJson(Menu)
                 bundle.putString("Menu", dataJson)
 

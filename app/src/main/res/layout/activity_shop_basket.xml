@@ -44,36 +44,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shopbasket_ll">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shopbasket_rv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"/>
 
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/shopbasket_tb"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@id/shopbasket_vp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tabGravity="fill"
-                app:tabIndicatorColor="@color/MainColor"
-                app:tabMode="fixed"
-                app:tabRippleColor="@color/transparent"
-                app:tabTextAppearance="@style/tabTextStyle2"
-                app:tabSelectedTextColor="@color/MainColor"
-                app:tabTextColor="@color/black" />
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            -->
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/shopbasket_tb"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/shopbasket_vp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:tabGravity="fill"-->
+<!--                app:tabIndicatorColor="@color/MainColor"-->
+<!--                app:tabMode="fixed"-->
+<!--                app:tabRippleColor="@color/transparent"-->
+<!--                app:tabTextAppearance="@style/tabTextStyle2"-->
+<!--                app:tabSelectedTextColor="@color/MainColor"-->
+<!--                app:tabTextColor="@color/black" />-->
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/shopbasket_vp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/shopbasket_tb" />
+<!--            <androidx.viewpager2.widget.ViewPager2-->
+<!--                android:id="@+id/shopbasket_vp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/shopbasket_tb" />-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
     </androidx.core.widget.NestedScrollView>

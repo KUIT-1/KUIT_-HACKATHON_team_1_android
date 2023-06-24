@@ -108,7 +108,7 @@ class AllMenuFragment : Fragment() {
                             val kor = menuDto.name_kr
                             val eng = menuDto.name_eng
                             val img = menuDto.image_url
-                            itemList.add(HomeItem(img, kor, eng, 0, ""))
+                            itemList.add(HomeItem(img, kor, eng, 0, "", 1))
                         }
                         // itemList이 변경되었으므로 어댑터에 변경을 알려줘야 함
                         binding.starbucksMenuListRv.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
